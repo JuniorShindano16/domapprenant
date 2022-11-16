@@ -25,7 +25,7 @@
         }
         .form{
             border: 1px solid black;
-            width: 30%;
+            max-width: 40%;
             padding: 10px;
         }
 
@@ -36,12 +36,22 @@
          .ecrire{
             margin-top: 5px;
             margin-bottom: 5px;
+            width: 100%;
          }
          #form #btnsubmit{
             width: 100px;
          }
 
+         @media screen and (max-width: 700px)  {
 
+            .ecrire{
+                display: flex;
+                flex-direction: column;
+            }
+            
+         }
+
+         
 
     </style>
 
