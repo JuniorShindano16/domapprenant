@@ -15,41 +15,7 @@ editModeEnabled(editMode)
 
 
 
-let learners = [
-{
-    'nom': 'Shindano',
-    'postnom':'Waya',
-    'prenom': 'Junior',
-    'pays':'Republique Democratique du Congo',
-    'genre':'M',
-    'github':'github.com/JuniorShindano16'
-},
-{
-    'nom': 'Yvanie',
-    'postnom':'Noelle',
-    'prenom': 'Nwouatou',
-    'pays':'Republique Du Cameroune',
-    'genre':'F',
-    'github':'github.com'
-},
-{
-    'nom': 'Vad',
-    'postnom':'Batoman',
-    'prenom': 'Vad',
-    'pays':'Republique Democratique du Congo',
-    'genre':'M',
-    'github':'github.com'
-},
-{
-    'nom': 'Mbiya',
-    'postnom':'Walter',
-    'prenom': 'Jean Claude',
-    'pays':'Republique Democratique du Congo',
-    'genre':'M',
-    'github':'github.com'
-}
-
-]
+let learners = []
 
 function loadLearnerInTable(){
         tableBody.innerHTML=''
@@ -89,6 +55,7 @@ form.addEventListener('submit', function(e){
     if (editMode){
         updateLeaner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
     } else {
+
         addLearner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
     }
 })
