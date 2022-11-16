@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestionApprennant</title>
+
+    <style>
+
+        .wrapper{
+            margin-left: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .form{
+            border: 1px solid black;
+            width: 30%;
+            padding: 10px;
+        }
+
+        #form{
+            display: flex;
+            flex-direction: column;
+         }
+         .ecrire{
+            margin-top: 5px;
+            margin-bottom: 5px;
+         }
+         #form #btnsubmit{
+            width: 100px;
+         }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <h1>Liste des Apprennants</h1>
+        <div class="form">
+            <form id="form" action="">
+
+                <div class="ecrire"><input type="text" name="newname" id="newname"> <span class="desc">Nom</span></div>
+                <div class="ecrire"><input type="text" name="newlastname" id="newlastname"> <span class="desc">Postnom</span></div> 
+                <div class="ecrire">  <input type="text" name="newfirstname" id="newfirstname"> <span class="desc">Prénom</span></div>
+                <div class="ecrire"><input type="text" name="newcountry" id="newcountry"> <span class="desc">Pays</span></div>
+                <div class="ecrire"><input type="text" name="newgender" id="newgender"> <span class="desc">Genre</span></div>
+                <div class="ecrire"><input type="text" name="newgit" id="newgit"> <span class="desc">GitHub</span></div>
+                
+                <button id="btnsubmit" type="submit">Ajouter</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>PostNom</th>
+                    <th>Prenom</th>
+                    <th>Pays</th>
+                    <th>Genre</th>
+                    <th>GitHub</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                
+                
+            </tbody>
+        </table>
+   </div>
+
+
+
+
+
+    <script src="/js/scrypt.js"></script>
+</body>
+</html>
