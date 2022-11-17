@@ -8,6 +8,13 @@ let formulaire = document.getElementById("form")
 let tableBody = document.querySelector('table tbody')
 let submitBtn = document.getElementById('btnsubmit')
 
+let learnerDeletednom= null
+let learnerDeletedpost= null
+let learnerDeletedpre= null
+let learnerDeletedpays= null
+let learnerDeletedgenre= null
+let learnerDeletedgit= null
+
 let editionLearner = null
 let editMode = false
 
@@ -29,7 +36,7 @@ function loadLearnerInTable(){
             <td>${apprennant.genre}</td>
             <td>${apprennant.github}</td>
             <td>
-                <button onclick="deleteLearner(this)">Supprimmer</button>
+                <button onclick="deleteLearner(this)" data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}">Supprimmer</button>
                 <button data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" onclick="editLearner(this)">Modifier</button>
             </td>
         </tr>`
@@ -40,7 +47,7 @@ function loadLearnerInTable(){
 }
 
 loadLearnerInTable()
-
+ 
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -98,6 +105,60 @@ function updateLeaner (){
 
 function deleteLearner(e){
     e.parentNode.parentNode.remove()
+
+    newname.value=e.dataset.nom
+    newlastname.value=e.dataset.postnom
+    newfirstname.value=e.dataset.prenom
+    newcountry.value=e.dataset.pays
+    newgender.value=e.dataset.genre
+    newgit.value =e.dataset.github
+    learnerDeletednom=learners.find((t) => t.nom == e.dataset.nom).nom
+    learnerDeletedpost= learners.find((t) => t.nom == e.dataset.nom).postnom
+    learnerDeletedpre= learners.find((t) => t.nom == e.dataset.nom).prenom
+    learnerDeletedpays= learners.find((t) => t.nom == e.dataset.nom).pays
+    learnerDeletedgenre= learners.find((t) => t.nom == e.dataset.nom).genre
+    learnerDeletedgit= learners.find((t) => t.nom == e.dataset.nom).github
+
+    //learners.splice (learners.indexOf(learnerDeleted),1)
+    let learnertodelete = {
+        'nom': learnerDeletednom,
+    'postnom': learnerDeletedpost,
+    'prenom': learnerDeletedpre,
+    'pays':learnerDeletedpays,
+    'genre':learnerDeletedgenre,
+    'github':learnerDeletedgit 
+    };
+
+   for (const lrnr of learners) {
+        if (learnertodelete.nom==lrnr.nom){
+            learners.splice(learners.indexOf(lrnr),1)
+        }
+
+        newname.value=''
+        newlastname.value=''
+        newfirstname.value=''
+        newcountry.value=''
+        newgender.value=''
+        newgit.value =''
+    
+   }
+
+
+    newname.value=''
+    newlastname.value=''
+    newfirstname.value=''
+    newcountry.value=''
+    newgender.value=''
+    newgit.value =''
+     learnerDeletednom= null
+    learnerDeletedpost= null
+    learnerDeletedpre= null
+    learnerDeletedpays= null
+   learnerDeletedgenre= null
+    learnerDeletedgit= null
+
+   
+   
 }
 
 
@@ -111,6 +172,7 @@ function editLearner(e) {
         newgender.value=e.dataset.genre
         newgit.value =e.dataset.github
     editionLearner = learners.find((t) => t.nom == e.dataset.nom)
+console.log (editionLearner)
 
 }
 
