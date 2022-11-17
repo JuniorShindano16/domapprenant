@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestionApprennant</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    
 
     <style>
 
-        .wrapper{
+        #wrapper{
             margin-left: 50px;
-            justify-content: center;
+            
             align-items: center;
         }
 
@@ -39,7 +41,8 @@
             width: 100%;
          }
          #form #btnsubmit{
-            width: 100px;
+            width: 90%;
+            margin-left: 20px;
          }
 
          @media screen and (max-width: 700px)  {
@@ -59,31 +62,31 @@
 <body>
 
 
-    <div class="wrapper">
+    <div class="container" id="wrapper">
         <h1>Liste des Apprennants</h1>
         <div class="form">
-            <form id="form" action="">
+            <form id="form" action=""  class="row g-3 needs-validation" novalidate>
 
-                <div class="ecrire"><input type="text" name="newname" id="newname"> <span class="desc">Nom</span></div>
-                <div class="ecrire"><input type="text" name="newlastname" id="newlastname"> <span class="desc">Postnom</span></div> 
-                <div class="ecrire">  <input type="text" name="newfirstname" id="newfirstname"> <span class="desc">Prénom</span></div>
-                <div class="ecrire"><input type="text" name="newcountry" id="newcountry"> <span class="desc">Pays</span></div>
-                <div class="ecrire"><input type="text" name="newgender" id="newgender"> <span class="desc">Genre</span></div>
-                <div class="ecrire"><input type="text" name="newgit" id="newgit"> <span class="desc">GitHub</span></div>
+                <div class="ecrire col-md-4"> <label for="validationCustom01" class="form-label">Nom</label><input type="text" name="newname" id="newname"  class="form-control"></div>
+                <div class="ecrire col-md-4"> <label for="validationCustom01" class="form-label">Postnom</label><input type="text" name="newlastname" id="newlastname"  class="form-control"></div> 
+                <div class="ecrire  col-md-4" > <label for="validationCustom01" class="form-label">Prenom</label> <input type="text" name="newfirstname" id="newfirstname"  class="form-control"></div>
+                <div class="ecrire  col-md-4">  <label for="validationCustom01" class="form-label">Pays</label><input type="text" name="newcountry" id="newcountry"  class="form-control"></div>
+                <div class="ecrire  col-md-4"><label for="validationCustom01" class="form-label">Genre</label><input type="text" name="newgender" id="newgender"  class="form-control"></div>
+                <div class="ecrire  col-md-4"><label for="validationCustom01" class="form-label">GitHub</label><input type="text" name="newgit" id="newgit"  class="form-control"></div>
                 
-                <button id="btnsubmit" type="submit">Ajouter</button>
+                <button id="btnsubmit" type="submit" class="btn btn-primary">Ajouter</button>
             </form>
         </div>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>PostNom</th>
-                    <th>Prenom</th>
-                    <th>Pays</th>
-                    <th>Genre</th>
-                    <th>GitHub</th>
-                    <th>Actions</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">PostNom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Pays</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">GitHub</th>
+                    <th scope="col">Actions</th>
 
                 </tr>
             </thead>
@@ -97,7 +100,7 @@
 
 
 
-
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/scrypt.js"></script>
 </body>
 </html>
