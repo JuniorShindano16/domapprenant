@@ -6,34 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestionApprennant</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
 
     <style>
-
+       @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+       *{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(102, 104, 105); ;
+}
         #wrapper{
-            margin-left: 50px;
-            
-            align-items: center;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .tableSection{
+           
+            overflow:scroll;
+            margin-bottom: 30px;
         }
 
         table {
             border: 1px solid black;
             border-collapse: collapse;
-            margin-top: 20px;
+            width: 100%;
+            min-width: 900px;
+        }
+        thead{
+            position: sticky;
+            top: 0;
+            font-size: 15px;
         }
         td, th {
             border: 1px solid black;
             border-collapse: collapse;
+            padding: 10px 20px;
+            word-break:keep-all;
+            text-align: center;
+            justify-content: space-between;
         }
         .form{
-            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid rgb(0, 156, 223);
             max-width: 40%;
             padding: 10px;
+            width: 30%;
+            min-width: 1000px;
+        }
+        .image{
+            border: 1px solid rgb(255, 255, 255);
         }
 
         #form{
+            width: 30%;
+           
             display: flex;
             flex-direction: column;
+            margin-bottom: 50px;
          }
          .ecrire{
             margin-top: 5px;
@@ -47,9 +78,11 @@
 
          @media screen and (max-width: 700px)  {
 
-            .ecrire{
-                display: flex;
-                flex-direction: column;
+           .form{
+               flex-direction: column-reverse;
+            }
+            #wrapper{
+                width: 100%;
             }
             
          }
@@ -63,7 +96,7 @@
 
 
     <div class="container" id="wrapper">
-        <h1>Liste des Apprennants</h1>
+        <h1>Remplissez Pour Etre Inscrit</h1>
         <div class="form">
             <form id="form" action=""  class="row g-3 needs-validation" novalidate>
 
@@ -76,25 +109,35 @@
                 
                 <button id="btnsubmit" type="submit" class="btn btn-primary">Ajouter</button>
             </form>
-        </div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Nom</th>
-                    <th scope="col">PostNom</th>
-                    <th scope="col">Prenom</th>
-                    <th scope="col">Pays</th>
-                    <th scope="col">Genre</th>
-                    <th scope="col">GitHub</th>
-                    <th scope="col">Actions</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                
-                
-            </tbody>
-        </table>
+            <div class="image"><img src="img.webp" alt=""></div>
+        </div>
+          <br>
+          <br>
+        <h1>Liste des Apprennants</h1><br>
+
+        <div class="tableSection">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">PostNom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Pays</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">GitHub</th>
+                        <th scope="col">Actions</th>
+    
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+        <p>© Design réalisé dans le cadre de mon apprentissage en HTML, CSS et JAVASCIPT avec Letecode.com</p>
    </div>
 
 

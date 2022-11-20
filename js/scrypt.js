@@ -36,8 +36,8 @@ function loadLearnerInTable(){
             <td>${apprennant.genre}</td>
             <td>${apprennant.github}</td>
             <td>
-                <button onclick="deleteLearner(this)" data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" class="btn btn-danger" width=45%>Supprimmer</button>
-                <button data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" onclick="editLearner(this)"  class="btn btn-warning" width=45%>Modifier</button>
+                <button onclick="deleteLearner(this)" data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" class="btn btn-danger">Supprimmer</button>
+                <button data-nom="${apprennant.nom}" data-postnom="${apprennant.postnom}" data-prenom="${apprennant.prenom}" data-pays="${apprennant.pays}" data-genre="${apprennant.genre}" data-githube="${apprennant.github}" onclick="editLearner(this)"  class="btn btn-warning">Modifier</button>
             </td>
         </tr>`
 
