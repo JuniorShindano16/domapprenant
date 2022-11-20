@@ -60,10 +60,22 @@ form.addEventListener('submit', function(e){
     let newgitValue=newgit.value 
 
     if (editMode){
-        updateLeaner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
-    } else {
+        if ((newnameValue=="")||(newfirstnameValue=="")||(newlastnameValue=="")||(newcountryValue=="")||(newgenderValue=="")||(newgitValue=="")){
+            alert ('UN DES CHAMPS EST VIDE')
 
-        addLearner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
+        } else{
+            updateLeaner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
+            
+
+        }
+       
+    } else {
+        if ((newnameValue=="")||(newfirstnameValue=="")||(newlastnameValue=="")||(newcountryValue=="")||(newgenderValue=="")||(newgitValue=="")){
+           alert('VEUILLEZ REMPLIR TOUS LES CHAMPS SVP')
+        } else{
+            addLearner(newnameValue,newfirstnameValue,newlastnameValue,newcountryValue,newgenderValue,newgitValue)
+
+        }
     }
 })
 
