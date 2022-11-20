@@ -89,6 +89,9 @@
                 width: 100%;
                 height: 650px;
             }
+            p{
+                word-wrap: break-word;
+            }
             
          }
 
@@ -109,7 +112,11 @@
                 <div class="ecrire col-md-4"> <label for="validationCustom01" class="form-label">Postnom</label><input type="text" name="newlastname" id="newlastname"  class="form-control"></div> 
                 <div class="ecrire  col-md-4" > <label for="validationCustom01" class="form-label">Prenom</label> <input type="text" name="newfirstname" id="newfirstname"  class="form-control"></div>
                 <div class="ecrire  col-md-4">  <label for="validationCustom01" class="form-label">Pays</label><input type="text" name="newcountry" id="newcountry"  class="form-control"></div>
-                <div class="ecrire  col-md-4"><label for="validationCustom01" class="form-label">Genre</label><input type="text" name="newgender" id="newgender"  class="form-control"></div>
+                <div class="ecrire  col-md-4"><label for="validationCustom01" class="form-label">Genre</label><select class="form-select" aria-label="Default select example" name="select" id="select">
+                    <option selected>Selectionne ton sexe</option>
+                    <option value="1">M</option>
+                    <option value="2">F</option>
+                  </select></div>
                 <div class="ecrire  col-md-4"><label for="validationCustom01" class="form-label">GitHub</label><input type="text" name="newgit" id="newgit"  class="form-control"></div>
                 
                 <button id="btnsubmit" type="submit" class="btn btn-primary">Ajouter</button>

@@ -2,7 +2,7 @@ let newname= document.getElementById("newname")
 let newlastname= document.getElementById("newlastname")
 let newfirstname= document.getElementById("newfirstname")
 let newcountry= document.getElementById("newcountry")
-let newgender= document.getElementById("newgender")
+let newgender= document.querySelector("select")
 let newgit=document.getElementById("newgit")
 let formulaire = document.getElementById("form")
 let tableBody = document.querySelector('table tbody')
@@ -56,7 +56,7 @@ form.addEventListener('submit', function(e){
     let newfirstnameValue= newfirstname.value
     let newlastnameValue = newlastname.value
     let newcountryValue=newcountry.value
-    let newgenderValue= newgender.value
+    let newgenderValue=  newgender.options[newgender.selectedIndex].label
     let newgitValue=newgit.value 
 
     if (editMode){
@@ -75,7 +75,7 @@ function addLearner (){
     'postnom': newlastname.value,
     'prenom': newfirstname.value,
     'pays':newcountry.value,
-    'genre':newgender.value,
+    'genre': newgender.options[newgender.selectedIndex].label,
     'github':newgit.value 
 
     };
@@ -86,7 +86,7 @@ function addLearner (){
         newlastname.value=''
         newfirstname.value=''
         newcountry.value=''
-        newgender.value=''
+        newgender.selectedIndex=0
         newgit.value =''
 }
 
@@ -95,7 +95,7 @@ function updateLeaner (){
     learners.find((t) => t.nom == editionLearner.nom).postnom =  newlastname.value
     learners.find((t) => t.nom == editionLearner.nom).prenom=  newfirstname.value
     learners.find((t) => t.nom == editionLearner.nom).pays =  newcountry.value
-    learners.find((t) => t.nom == editionLearner.nom).genre =  newgender.value
+    learners.find((t) => t.nom == editionLearner.nom).genre =   newgender.options[newgender.selectedIndex].label
     learners.find((t) => t.nom == editionLearner.nom).github =  newgit.value
 
     loadLearnerInTable()
@@ -110,7 +110,7 @@ function deleteLearner(e){
     newlastname.value=e.dataset.postnom
     newfirstname.value=e.dataset.prenom
     newcountry.value=e.dataset.pays
-    newgender.value=e.dataset.genre
+    newgender.options[newgender.selectedIndex].label=e.dataset.genre
     newgit.value =e.dataset.github
     learnerDeletednom=learners.find((t) => t.nom == e.dataset.nom).nom
     learnerDeletedpost= learners.find((t) => t.nom == e.dataset.nom).postnom
@@ -138,7 +138,7 @@ function deleteLearner(e){
         newlastname.value=''
         newfirstname.value=''
         newcountry.value=''
-        newgender.value=''
+        newgender.options[newgender.selectedIndex].label=''
         newgit.value =''
     
    }
@@ -148,7 +148,7 @@ function deleteLearner(e){
     newlastname.value=''
     newfirstname.value=''
     newcountry.value=''
-    newgender.value=''
+    newgender.options[newgender.selectedIndex].label=''
     newgit.value =''
      learnerDeletednom= null
     learnerDeletedpost= null
@@ -169,7 +169,7 @@ function editLearner(e) {
         newlastname.value=e.dataset.postnom
         newfirstname.value=e.dataset.prenom
         newcountry.value=e.dataset.pays
-        newgender.value=e.dataset.genre
+        newgender.options[newgender.selectedIndex].label=e.dataset.genre
         newgit.value =e.dataset.github
     editionLearner = learners.find((t) => t.nom == e.dataset.nom)
 console.log (editionLearner)
@@ -188,7 +188,7 @@ function editModeEnabled(enabled) {
         newlastname.value=''
         newfirstname.value=''
         newcountry.value=''
-        newgender.value=''
+        newgender.options[newgender.selectedIndex].label=''
         newgit.value =''
     }
 }
